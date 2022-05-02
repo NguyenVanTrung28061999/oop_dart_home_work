@@ -14,6 +14,12 @@ class Student {
       required this.diemVan,
       required this.diemAnh});
 
+  getSoDT() => _soDienThoai;
+
+  setSoDT({required soDT}) {
+    _soDienThoai = soDT;
+  }
+
   getBirthDay() => _birthDay;
 
   setBirthDay({required birthDay}) {
@@ -22,7 +28,7 @@ class Student {
 
   getInfoStudent() {
     print(
-        "maHS: $maHS, hoTen:$name, Ngày Sinh:${getBirthDay()} ,diemToan:$diemToan,diemVan:$diemVan,diemAnh:$diemAnh");
+        "maHS: $maHS, hoTen:$name, Ngày Sinh:${getBirthDay()} ,diem Toan:$diemToan,diem Van:$diemVan,diem Anh:$diemAnh");
   }
 
   getDiemTB() {
@@ -35,12 +41,13 @@ class Student {
     var result = (diemToan! + diemVan! + diemAnh!) / 3;
     if (result >= 8.5) {
       loai = "Loại Giỏi";
-    } else if (result >= 6.5 && result < 8.5)
+    } else if (result >= 6.5 && result < 8.5) {
       loai = "Loại Khá";
-    else if (result > 5 && result < 6.5)
+    } else if (result > 5 && result < 6.5) {
       loai = "Loại Trung Bình";
-    else
+    } else {
       loai = "Loại Yếu";
+    }
 
     return loai;
   }
